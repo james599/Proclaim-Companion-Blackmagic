@@ -28,8 +28,8 @@ def main(LowerThirds):
         msg = inport.receive()
         MIDI = int(str(msg).split(" ")[2].split("=")[1])
         if MIDI in MIDILoc:
-            if (MIDI == 1 and LowerThirds is True) or (MIDI == 2 and LowerThirds is False):
-                break
+            if (MIDI == 1 and LowerThirds == True) or (MIDI == 2 and LowerThirds == False):
+                pass
             elif MIDI == 1:
                 LowerThirds = True
                 CompanionTrigger(MIDI)
