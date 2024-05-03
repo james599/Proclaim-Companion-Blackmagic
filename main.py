@@ -40,11 +40,10 @@ def main(LowerThirds):
 
 if __name__ == "__main__":
     print("Just close the window to stop automation...")
-
     try:
-        inport = mido.open_input("ProclaimCompanion 0")
-        print(Log("Running..."))
-        connected = True
+        with mido.open_input('Proclaim Virtual MIDI', virtual=True) as inport:
+            print(Log("Running..."))
+            connected = True
     except Exception as e:
         print("LoopMIDI Not running 'ProclaimCompanion' correctly\nPlease re-run program\n" + Log(e))
         time.sleep(20)
